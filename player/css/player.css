@@ -1,0 +1,170 @@
+html{
+	height: 100%;
+	background: linear-gradient(120deg,#4d10be,#bc24b7);
+	font-size: 100px;
+}
+.maxBox{
+	width: 10rem;
+	height: 6.3rem;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	color: #fff;
+	font-family: '微软雅黑';
+	overflow: hidden;
+}
+.cdBox{
+	width: 4.5rem;
+	height: 4.5rem;
+	position: absolute;
+}
+.cd{
+	width: 3.74rem;
+	height: 3.74rem;
+	position: absolute;
+	border-radius: 50%;
+	box-shadow: 0 0 0.3rem rgba(0, 0, 0, 0.8);
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	background: url('../images/cd.png');
+	animation:cdr 20s linear infinite;
+	animation-play-state: paused;
+	transition: 1s;
+}
+@keyframes cdr{
+	from {
+		transform: translate(-50%, -50%)rotateZ(0deg);
+	}to {
+		transform: translate(-50%, -50%)rotateZ(360deg);
+	}
+}
+.cdImg{
+	width: 2.05rem;
+	height: 2.05rem;
+	border-radius: 50%;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	background: url('../images/img.jpg');
+	background-size: contain;
+}
+.head{
+	width: 1.15rem;
+	height: 4.15rem;
+	position: absolute;
+	right: -0.2rem;
+	top: -1.5rem;
+	background: url('../images/cd_tou.png') no-repeat left bottom;
+	transform: rotateZ(-17deg);
+	transition: 0.5s;
+}
+.musicBox{
+	width: 4.35rem;
+	height: 2.3rem;
+	position: absolute;
+	right: 0;
+	top: 1.2rem;
+	text-align: center;
+}
+.musicBox>h2{
+	margin: 0;
+	padding: 0;
+	font-size: 0.58rem;
+	line-height: 0.8rem;
+}
+.musicBox>span:nth-of-type(1){
+	font-size: 0.24rem;
+	margin-right: 0.1rem;
+}
+.musicBox>span:nth-of-type(2){
+	font-size: 0.2rem;
+}
+.musicBox>p{
+	width: 4.3rem;
+	overflow: hidden;
+	margin-top: 0.55rem;
+}
+.musicBox>p>span{
+	font-size: 0.24rem;
+	margin: 0 0.1rem;
+	cursor: pointer;
+	float: left;
+}
+.musicBox>p>i{
+	margin: 0 0.1rem;
+	font-size: 0.22rem;
+	float: right;
+	cursor: pointer;
+}
+.musicBox>div{
+	overflow: hidden;
+}
+.musicBox>div>span{
+	float: left;
+}
+.pro{
+	width: 3.3rem;
+	height: 0.06rem;
+	border-radius: 0.03rem;
+	background: #4e0f51;
+	float: right;
+	margin: 0.07rem 0.1rem;
+	cursor: pointer;
+}
+.pro>p{
+	width: 0%;
+	height: 0.06rem;
+	margin: 0;
+	padding: 0;
+	border-radius: 0.03rem;
+	background: #cacaca;
+	position: relative;
+}
+.pro>p>strong{
+	display: block;
+	width: 0.1rem;
+	height: 0.1rem;
+	border-radius: 50%;
+	background: #fff;
+	position: absolute;
+	right: -0.05rem;
+	top: -0.02rem;
+}
+footer{
+	position: absolute;
+	bottom: 0.1rem;
+	padding: 0 0.2rem;
+}
+footer>div{
+	width: 1.72rem;
+	height: 0.86rem;
+	padding-top: 0.1rem;
+	margin:0.2rem 0.1rem;
+	border-radius: 0.1rem;
+	background: linear-gradient(rgba(255, 255, 255, 0.3) 40%,rgba(255, 255, 255, 0.1) 40%);
+	float: left;
+	box-shadow: 0.05rem 0.05rem 0.1rem rgba(0, 0, 0, 0.5);
+	cursor: pointer;
+	text-align: center;
+}
+footer>div>h2{
+	font-size: 0.3rem;
+	line-height: 0.46rem;
+	margin: 0;
+	padding: 0;
+}
+footer>div>span:nth-of-type(1){
+	font-size: 0.14rem;
+	margin-right: 0.03rem;
+}
+footer>div>span:nth-of-type(2){
+	font-size: 0.12rem;
+}
+div.active{
+	box-shadow: 0px 0px 0.1rem rgba(255, 255, 255, 0.6);
+	background: linear-gradient(rgba(0, 0, 0, 0.3) 40%,rgba(0, 0, 0, 0.1) 40%);
+	
+}
