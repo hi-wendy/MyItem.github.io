@@ -1,0 +1,416 @@
+html,body {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	font-family: "微软雅黑";
+}
+img,li,ul,input{
+	margin: 0;
+	padding: 0;
+}
+ul,li{
+	list-style: none;
+}
+input,span{
+	font-family: "微软雅黑";
+	-webkit-appearance : none;
+}
+#map {
+	width: 100%;
+	height: 100%;
+	position: relative;
+}
+#map .menuBox {
+	width: 35px;
+	min-height: 48px;
+	text-align: center;
+	font-size: 10px;
+	position: fixed;
+	left: 11px;
+	bottom: 130px;
+	z-index: 150;
+	box-shadow: 0 0 10px 0 #999;
+	transition: 0.3s;
+}
+.amap-call{
+	display: none;
+}
+#map .menuBox.active{
+	min-height: 144px;
+}
+#map .menuBox div{
+	padding: 2px 0;
+	background-color: #fff;
+}
+#map .menuBox>div{
+	position: absolute;
+	bottom: 0;
+	transition: 0.3s;
+}
+#map .menuBox.active>.searchBtn{
+	bottom: 96px;
+}
+#map .menuBox.active>.daohangBtn{
+	bottom: 48px;
+}
+#map .menuBox img{
+	width: 50%;
+}
+/*
+#map span {
+	width: 35px;
+	height: 46px;
+}*/
+#map i.icon {
+	display: block;
+	width: 35px;
+	height: 18px;
+	text-align: center;
+	padding:5px 0 1px 0;
+}
+#map i.icon img {
+	width: 50%;
+}
+#map span.desc {
+	display: block;
+	width: 35px;
+	height: 20px;
+	font-size: 10px;
+	line-height: 20px;
+	text-align: center;
+	font-size: normal;
+}
+#map span.searchBtn , #map span.daohangBtn {
+	background-color: #ddd !important;
+}
+#map .routeSearch {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+	background-color: #e1e1e1;
+	transform: translateX(100%);
+	transition: 0.3s;
+	z-index: 10110;
+}
+#map .routeSearch.active{
+	transform: translateX(0);
+}
+#map .routeSearch .ways {
+	width: 100%;
+	height: 60px;
+	background-color: #fff;
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 2;
+}
+#map .routeSearch .ways p{
+	width: 80%;
+	height: 40px;
+	margin: 0 auto;
+}
+#map .routeSearch .ways p span{
+	display: inline-block;
+	width: 50%;
+	text-align: center;
+	line-height: 60px;
+	color: #000;
+	text-decoration: none;
+	font-size: 14px;
+}
+#map .routeSearch .ways p span.walkWay {
+	float: left;
+}
+#map .routeSearch .ways p span.cycleWay {
+	float: right;
+}
+#map .routeSearch .ways p span.active {
+	border-bottom: 2px solid #51BE53;
+	color: #51BE53;
+}
+#map .routeSearch .searchBox {
+	width: 100%;
+	height: 110px;
+	background-color: #fff;
+	position: absolute;
+	left: 0;
+	top: 70px;
+	z-index: 2;
+}
+#map .routeSearch .searchBox .icon {
+	width: 60px;
+	height: 110px;
+	float: left;
+	/*background-color: #ddd;*/
+}
+#map .routeSearch .searchBox .icon img {
+	display: block;
+	width: 35px;
+	height: 35px;
+	-webkit-transform:rotate(90deg);
+	margin: 37px auto;
+}
+#map .routeSearch .searchBox .searchForm {
+	width: 56%;
+	height: 110px;
+	float: left;
+	position: relative;
+}
+#map .routeSearch .searchBox .searchForm p {
+	margin: 0;
+	width: 100%;
+	height: 55px;
+	position: relative;
+}
+#map .routeSearch .searchBox .searchForm p.startPlace {
+	border-bottom: 1px solid #ccc;
+}
+#map .routeSearch .searchBox .searchForm p span.dot {
+	display: block;
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	position: absolute;
+	left: 12px;
+	top: 21px;
+}
+#map .routeSearch .searchBox .searchForm p.startPlace span.dot {
+	background-color: #0075ff;
+}
+#map .routeSearch .searchBox .searchForm p.endPlace span.dot {
+	background-color: #da2218;
+}
+#map .routeSearch .searchBox .searchForm p input[type="text"]{
+	border: none;
+	width: 100%;
+	height: 52px;
+	font-size: 14px;
+	padding-left: 30px;
+	box-sizing: border-box;
+	outline: none;
+}
+#map .routeSearch .searchBox .searchForm button{
+	width: 70px;
+	height: 30px;
+	text-align: center;
+	line-height: 30px;
+	color: #fff;
+	border-radius: 20px;
+	background-color: #51BE53;
+	border: none;
+	position: absolute;
+	right: -75px;
+	top: 40px;
+}
+
+#map .palceSearch {
+	width: 100%;
+	height: 100%;
+	overflow-y: auto;
+	background-color: #fff;
+	position: absolute;
+	left: 0;
+	top: 0;
+	transform: translateX(100%);
+	transition: 0.3s;
+	z-index: 10110;
+}
+#map .palceSearch.active{
+	transform: translateX(0);
+}
+#map .palceSearch .searchBox {
+	width: 92%;
+	padding: 12px 4%;
+	background-color: rgb(238,238,238);
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 1;
+}
+#map .palceSearch .searchBox input[type="text"]{
+	width: 75%;
+	height: 35px;
+	line-height: 15px;
+	box-sizing: border-box;
+	border: none;
+	background-image: url(./images/search.png);
+	background-repeat: no-repeat;
+	background-size: 8%;
+	background-position: 8px center;
+	padding: 10px 5px 10px 35px;
+	margin-right: 8px;
+	border-radius: 5px;
+	outline: none;
+}
+#map .palceSearch .searchBox input[type="submit"]{
+	border: none;
+	width: 20%;
+	height: 35px;
+	font-size: 14px;
+	border-radius: 7px;
+	background-color: #cbcbcb;
+	color: #fff;
+	outline: none;
+}
+#map .palceSearch .searchBox input[type="submit"].active{
+	background-color: #51BE53;
+}
+#map .palceSearch .placeName {
+	width: 100%;
+	max-height: 20%;
+	overflow: auto;
+	position: fixed;
+	top: 70px;
+	left: 0;
+}
+#map .palceSearch .placeName span {
+	display: block;
+	width: 25%;
+	height: 24px;
+	float: left;
+	margin: 4px 0;
+	text-align: center;
+	font-size: 12px;
+	line-height: 24px;
+	color: #666;
+}
+#presult{
+	display: none;
+	width: 100%;
+	padding: 60px 10px 0 10px;
+	background-color: #fff;
+	height: 100%;
+	box-sizing: border-box;
+	overflow-y: auto;
+	position: absolute;
+}
+#presult li{
+	height: 49px;
+	line-height: 49px;
+	white-space:nowrap;
+	overflow-x: auto;
+	border-bottom: 1px solid #ccc;
+}
+#wresult{
+	display: none;
+	width: 100%;
+	max-height: 100%;
+	overflow-y: auto;
+	padding-top: 185px;
+	box-sizing: border-box;
+	position: absolute;
+	top: 0;
+	z-index: 1;
+}
+#wresult li{
+	width: 100%;
+	height: 49px;
+	padding: 0 10px;
+	overflow-x: auto;
+    line-height: 49px;
+    white-space: nowrap;
+    border-bottom: 1px solid #ccc;
+    background-color: #fff;
+}
+.amap-zoom-touch-minus>div, .amap-zoom-touch-plus>div{
+	cursor:default;
+}
+/**地图定位logo**/
+.amap-geolocation-con .amap-geo, .amap-touch-toolbar .amap-geo{
+	background-image: url(./images/posi.png);
+	background-size: 65%;
+}
+.amap-locate-loading .amap-geo,
+.amap-touch-toolbar .amap-locate-loading {
+	background-image: url(./images/loading.gif);
+	background-size: 35%;
+}
+/*版权*/
+.amap-logo , .amap-copyright {
+	display: none !important;
+}
+/*比例尺位置*/
+.amap-scalecontrol {
+	left: 5px !important;
+	bottom: 5px !important;
+}
+.amap-touch-toolbar {
+	left: 0px !important;
+}
+#wayDetails{
+	display: none;
+	width: 100%;
+	min-height: 44px;
+	max-height: 100%;
+	overflow-y: auto;
+	position: fixed;
+	top: 0;
+	z-index: 10000;
+	background-color: #fff;
+	box-sizing: border-box;
+	transition: 0.5s;
+}
+.amap-lib-driving{
+	border: none;
+}
+.amap-lib-driving .planTitle{
+	width: 100%;
+	box-sizing: border-box;
+	margin-bottom:0;
+	border-top:none;
+	z-index: 10001;
+}
+.amap-lib-driving .planTitle.current .sidebar, .amap-lib-driving .planTitle:hover .sidebar{
+	display: none;
+}
+#wayDetailsBox .amap-lib-driving{
+	position: relative;
+}
+#wayDetails .planTitle{
+	width: 100%;
+	background:#fff;
+	position: fixed;
+	top: 0;
+	z-index: 11;
+}
+#wayDetails .plan-nobus{
+	padding-top: 44px;
+}
+#wayDetails .dBtn{
+	width: 100%;
+	height: 44px;
+	position: fixed;
+	top: 0;
+	z-index: 10002;
+}
+#wayDetails .dBtn span{
+	float: right;
+	color: #565656;
+	transform: rotateZ(90deg) translate(15px,15px);
+}
+#wayDetails .dBtn.active span{
+	transform: rotateZ(-90deg)translate(-7px,-15px);
+}
+.info-title{
+    color: white;
+    font-size: 14px;
+    background-color: blue;
+    line-height: 26px;
+    padding: 0px 0 0 6px;
+    font-weight: lighter;
+    letter-spacing: 1px
+}
+.info-content{
+    padding: 4px;
+    color: #666666;
+    line-height: 23px;
+    font: 12px Helvetica, 'Hiragino Sans GB', 'Microsoft Yahei', '微软雅黑', Arial;
+}
+.info-content img{
+    float: left;
+    margin: 3px;
+}
