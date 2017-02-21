@@ -87,7 +87,7 @@ music.ondurationchange=function () {
 	setTimeout(function(){
 		totaltime=$('#player')[0].duration;
 		$('.ttime').html(addZero(parseInt(totaltime/60))+":"+addZero(parseInt(totaltime%60)));
-	},2000);
+	},5000);
 }
 
 music.onplaying=function () {
