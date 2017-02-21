@@ -85,7 +85,9 @@ music.onpause=function () {
 //当媒介长度改变时运行脚本
 music.ondurationchange=function () {
 	totaltime=$('#player')[0].duration;
-	$('.ttime').html(addZero(parseInt(totaltime/60))+":"+addZero(parseInt(totaltime%60)));
+	setTimeout(function(){
+		$('.ttime').html(addZero(parseInt(totaltime/60))+":"+addZero(parseInt(totaltime%60)));
+	},1000);
 }
 
 music.onplaying=function () {
