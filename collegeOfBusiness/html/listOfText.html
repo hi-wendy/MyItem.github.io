@@ -1,1 +1,22 @@
-<div class="listOfText"><div class="mTop clearfix"><p class="fl"><span ng-click="goHome()"><i class="iconfont icon-shouye"></i>首页</span></p><p class="fl" ng-repeat="t in topT"><i class="iconfont icon-jiantou-copy"></i> <span ng-click="goto(t.u)">{{t.n}}</span></p></div><div class="content"><ul class="t-list"><li class="top"><i class="iconfont icon-dian"></i><p title="暑期班暑期班暑期班暑期班暑期班暑期班暑期班暑期班暑期班暑期班暑期班暑期班暑期班">暑期班暑期暑期班暑期班暑期班暑期班暑期班暑期班暑期班暑期班暑期班暑期班暑期班暑期班暑期班班暑期班暑期班暑期班暑期班暑期班暑期班暑期班暑期班暑期班暑期班暑期班</p><span>置顶</span> <time>2017-01-01</time></li><li><i class="iconfont icon-dian"></i><p title="暑期班暑期班暑期班暑期班暑期班暑期班暑期班暑期班暑期班暑期班暑期班暑期班暑期班">暑期班暑期暑期班暑期班暑期班暑期班暑期班暑期班暑期班暑期班暑期班暑期班暑期班暑期班暑期班班暑期班暑期班暑期班暑期班暑期班暑期班暑期班暑期班暑期班暑期班暑期班</p><span>置顶</span> <time>2017-01-01</time></li><li><i class="iconfont icon-dian"></i><p title="暑期班暑期班暑期班暑期班暑期班暑期班暑期班暑期班暑期班暑期班暑期班暑期班暑期班">暑期班暑期暑期班暑期班暑期班暑期班暑期班暑期班暑期班暑期班暑期班暑期班暑期班暑期班暑期班班暑期班暑期班暑期班暑期班暑期班暑期班暑期班暑期班暑期班暑期班暑期班</p><span>置顶</span> <time>2017-01-01</time></li><li><i class="iconfont icon-dian"></i><p title="暑期班暑期班暑期班暑期班暑期班暑期班暑期班暑期班暑期班暑期班暑期班暑期班暑期班">暑期班暑期暑期班暑期班暑期班暑期班暑期班暑期班暑期班暑期班暑期班暑期班暑期班暑期班暑期班班暑期班暑期班暑期班暑期班暑期班暑期班暑期班暑期班暑期班暑期班暑期班</p><span>置顶</span> <time>2017-01-01</time></li><li><i class="iconfont icon-dian"></i><p title="暑期班暑期班暑期班暑期班暑期班暑期班暑期班暑期班暑期班暑期班暑期班暑期班暑期班">暑期班暑期暑期班暑期班暑期班暑期班暑期班暑期班暑期班暑期班暑期班暑期班暑期班暑期班暑期班班暑期班暑期班暑期班暑期班暑期班暑期班暑期班暑期班暑期班暑期班暑期班</p><span>置顶</span> <time>2017-01-01</time></li><li><i class="iconfont icon-dian"></i><p title="暑期班暑期班暑期班暑期班暑期班暑期班暑期班暑期班暑期班暑期班暑期班暑期班暑期班">暑期班暑期暑期班暑期班暑期班暑期班暑期班暑期班暑期班暑期班暑期班暑期班暑期班暑期班暑期班班暑期班暑期班暑期班暑期班暑期班暑期班暑期班暑期班暑期班暑期班暑期班</p><span>置顶</span> <time>2017-01-01</time></li><li><i class="iconfont icon-dian"></i><p title="暑期班暑期班暑期班暑期班暑期班暑期班暑期班暑期班暑期班暑期班暑期班暑期班暑期班">暑期班暑期暑期班暑期班暑期班暑期班暑期班暑期班暑期班暑期班暑期班暑期班暑期班暑期班暑期班班暑期班暑期班暑期班暑期班暑期班暑期班暑期班暑期班暑期班暑期班暑期班</p><span>置顶</span> <time>2017-01-01</time></li><li><i class="iconfont icon-dian"></i><p title="暑期班暑期班暑期班暑期班暑期班暑期班暑期班暑期班暑期班暑期班暑期班暑期班暑期班">暑期班暑期暑期班暑期班暑期班暑期班暑期班暑期班暑期班暑期班暑期班暑期班暑期班暑期班暑期班班暑期班暑期班暑期班暑期班暑期班暑期班暑期班暑期班暑期班暑期班暑期班</p><span>置顶</span> <time>2017-01-01</time></li></ul></div><div class="pageBox"><ul class="clearfix"><li class="pP disabled">上一页</li><li class="active">1</li><li>2</li><li>3</li><li>4</li><li>5</li><li class="nP">下一页</li></ul></div></div>
+<div class="listOfText">
+    <div class="mTop clearfix">
+        <p class="fl"><span ng-click="goHome()"><i class="iconfont icon-shouye"></i>首页</span></p>
+        <p class="fl" ng-repeat="t in topT"><i class="iconfont icon-jiantou-copy"></i> <span ng-click="goto(t.u)">{{t.n}}</span></p>
+    </div>
+    <div class="content">
+        <ul class="t-list">
+            <li ng-repeat="d in listdata.list" ng-click="goto(detailpath,{id:d.id})" ng-class="{'top':d.isTop==1}"><i class="iconfont icon-dian"></i>
+                <p title="{{d.title}}">{{d.title}}</p><span>置顶</span>
+                <time>{{d.createDate | date:'yyyy-MM-dd'}}</time>
+            </li>
+            <li class="nodata" ng-show="listdata.list.length<1">暂无相关信息</li>
+        </ul>
+    </div>
+    <div class="pageBox">
+        <ul class="clearfix">
+            <li class="pP" ng-class="{'disabled':listdata.currentPage==1}" ng-show="listdata.totalPage>0">上一页</li>
+            <li ng-repeat="p in listpage" ng-class="{'active':listdata.currentPage==p}" tpage="{{p}}">{{p}}</li>
+            <li class="nP" ng-class="{'disabled':listdata.currentPage==listdata.totalPage}" ng-show="listdata.totalPage>0">下一页</li>
+        </ul>
+    </div>
+</div>

@@ -1,1 +1,17 @@
-<div class="TopASide clearfix"><div class="mainwidth"><div class="bannerBox"><div class="banner" style="background-image:url({{banner.img}})"></div></div><div class="asideBox clearfix"><aside><dl><dt>{{side.t}}</dt><dd ng-repeat="s in side.nav" ng-class="s.c" ng-click="goto(s.u)"><p><span>{{s.t}}</span><i class="iconfont icon-jiantou-copy"></i></p></dd></dl></aside><div id="mainView" ui-view="mainView" class="fr"></div></div></div></div>
+<div class="TopASide clearfix">
+	<div class="mainwidth">
+		<!-- banner -->
+		<div class="bannerBox">
+			<div class="banner" style="background-image: url({{rootpath}}{{bannerc}});"></div>
+		</div>
+		<div class="asideBox clearfix">
+			<aside>
+				<dl>
+					<dt>{{side.t}}</dt>
+					<dd ng-repeat="s in side.nav" ng-class="s.c" ng-click="goto(s.u)"><p><span>{{s.t}}</span><i class="iconfont icon-jiantou-copy"></i></p></dd>
+				</dl>
+			</aside>
+			<div id="mainView" ui-view='mainView' class="fr"></div>
+		</div>
+	</div>
+</div>

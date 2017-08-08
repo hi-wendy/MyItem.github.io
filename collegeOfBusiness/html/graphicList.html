@@ -1,1 +1,27 @@
-<div class="graphicList"><div class="mTop clearfix"><p class="fl"><span ng-click="goHome()"><i class="iconfont icon-shouye"></i>首页</span></p><p class="fl" ng-repeat="t in topT"><i class="iconfont icon-jiantou-copy"></i> <span ng-click="goto(t.u)">{{t.n}}</span></p></div><ul class="clearfix contentImgL"><li class="top"><div class="imgBox" style="background-image:url(images/211.png)"></div><div class="tBox"><p title="尤美力--共享健身将打开新局面面尤美力--共享健身将打开新局面面尤美力--共享健身将打开新局面面">尤美力--共享健身将打开新局面面尤美力--共享健身将打开新局面面</p><span>置顶</span></div></li><li><div class="imgBox" style="background-image:url(images/211.png)"></div><div class="tBox"><p title="尤美力--共享健身将打开新局面面尤美力--共享健身将打开新局面面尤美力--共享健身将打开新局面面">尤美力--共享健身将打开新局面面尤美力--共享健身将打开新局面面</p><span>置顶</span></div></li><li><div class="imgBox" style="background-image:url(images/211.png)"></div><div class="tBox"><p title="尤美力--共享健身将打开新局面面尤美力--共享健身将打开新局面面尤美力--共享健身将打开新局面面">尤美力--共享健身将打开新局面面尤美力--共享健身将打开新局面面</p><span>置顶</span></div></li><li><div class="imgBox" style="background-image:url(images/211.png)"></div><div class="tBox"><p title="尤美力--共享健身将打开新局面面尤美力--共享健身将打开新局面面尤美力--共享健身将打开新局面面">尤美力--共享健身将打开新局面面尤美力--共享健身将打开新局面面</p><span>置顶</span></div></li><li><div class="imgBox" style="background-image:url(images/211.png)"></div><div class="tBox"><p title="尤美力--共享健身将打开新局面面尤美力--共享健身将打开新局面面尤美力--共享健身将打开新局面面">尤美力--共享健身将打开新局面面尤美力--共享健身将打开新局面面</p><span>置顶</span></div></li></ul><div class="pageBox"><ul class="clearfix"><li class="pP">上一页</li><li class="active">1</li><li>2</li><li>3</li><li>4</li><li>5</li><li class="nP">下一页</li></ul></div></div>
+<div class="graphicList">
+	<div class="mTop clearfix">
+		<p class="fl">
+			<span ng-click="goHome()">
+				<i class="iconfont icon-shouye"></i>首页
+			</span>
+		</p>
+		<p class="fl" ng-repeat="t in topT">
+			<i class="iconfont icon-jiantou-copy"></i>
+			<span ng-click="goto(t.u)">{{t.n}}</span>
+		</p>
+	</div>
+	<ul class="clearfix contentImgL">
+		<li ng-repeat="d in listdata.list" ng-click="goto(detailpath,{id:d.id})" ng-class="{'top':d.isTop==1}">
+			<div class="imgBox" style="background-image: url({{rootpath}}{{d.coverImageUrl}});"></div>
+			<div class="tBox"><p title="{{d.title}}">{{d.title}}</p><span>置顶</span></div>
+		</li>
+		<li class="nodata" ng-show="listdata.list.length<1">暂无相关信息</li>
+	</ul>
+	<div class="pageBox">
+		<ul class="clearfix">
+			<li class="pP" ng-class="{'disabled':listdata.currentPage==1}" ng-show="listdata.totalPage>0">上一页</li>
+            <li ng-repeat="p in listpage" ng-class="{'active':listdata.currentPage==p}" tpage="{{p}}">{{p}}</li>
+            <li class="nP" ng-class="{'disabled':listdata.currentPage==listdata.totalPage}" ng-show="listdata.totalPage>0">下一页</li>
+		</ul>
+	</div>
+</div>

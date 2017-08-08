@@ -1,1 +1,20 @@
-<div class="search"><p class="noResult clearfix" ng-show="result<1"><i class="iconfont icon-tanhao"></i><span>抱歉，没有找到与“关键词”相关的内容</span></p><p class="count" ng-show="result>0">为您找到“关键词”相关的内容{{result}}个</p><ul class="resultBox"><li ng-repeat="r in data"><p class="clearfix"><span title="{{r.title}}">{{r.title}}</span> <time>{{r.time}}</time></p><strong>[详情]</strong></li></ul><div class="pageBox" ng-show="result<1"><ul class="clearfix"><li class="pP">上一页</li><li class="active">1</li><li>2</li><li>3</li><li>4</li><li>5</li><li class="nP">下一页</li></ul></div></div>
+<div class="search">
+	<p class="noResult clearfix" ng-show="searchdata.list.length<1"><i class="iconfont icon-tanhao"></i><span>抱歉，没有找到与“{{keyword}}”相关的内容</span></p>
+	<p class="count" ng-show="searchdata.list.length>0">为您找到“{{keyword}}”相关的内容{{searchdata.totalCount}}个</p>
+	<ul class="resultBox">
+		<li ng-repeat="r in searchdata.list">
+			<p class="clearfix">
+				<span title="{{r.title}}">{{r.title}}</span>
+				<time>{{r.createDate | date:'yyyy-MM-dd'}}</time>
+			</p>
+			<a href="#{{r.columnInfo.code}}D?id={{r.id}}"><strong>[详情]</strong></a>
+		</li>
+	</ul>
+	<div class="pageBox">
+		<ul class="clearfix">
+			<li class="pP" ng-class="{'disabled':searchdata.currentPage==1}" ng-show="searchdata.totalPage>0">上一页</li>
+            <li ng-repeat="p in searchpage" ng-class="{'active':searchdata.currentPage==p}" tpage="{{p}}">{{p}}</li>
+            <li class="nP" ng-class="{'disabled':searchdata.currentPage==searchdata.totalPage}" ng-show="searchdata.totalPage>0">下一页</li>
+		</ul>
+	</div>
+</div>

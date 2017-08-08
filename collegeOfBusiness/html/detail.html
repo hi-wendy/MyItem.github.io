@@ -1,1 +1,27 @@
-<div class="detail"><div class="mTop clearfix"><p class="fl"><span ng-click="goHome()"><i class="iconfont icon-shouye"></i>首页</span></p><p class="fl" ng-repeat="t in topT"><i class="iconfont icon-jiantou-copy"></i> <span ng-click="goto(t.u)">{{t.n}}</span></p></div><div class="contentBoxDetail"><div class="title"><h3>武汉理工大学2017年中学生暑期课堂报到通知及老师联系方式</h3><time>2017-07-01</time></div><div class="content"><img src="images/20174191492581228344_17.jpg" alt=""></div></div></div>
+<div class="detail">
+	<div class="mTop clearfix">
+		<p class="fl">
+			<span ng-click="goHome()">
+				<i class="iconfont icon-shouye"></i>首页
+			</span>
+		</p>
+		<p class="fl" ng-repeat="t in topT">
+			<i class="iconfont icon-jiantou-copy"></i>
+			<span ng-click="goto(t.u)">{{t.n}}</span>
+		</p>
+	</div>
+	<div class="contentBoxDetail">
+		<div class="title" tda="{{detaildata.title}}">
+			<h3>{{detaildata.title}}</h3>
+			<time>{{detaildata.createDate | date:'yyyy-MM-dd'}}</time>
+		</div>
+		<div class="content" ng-bind-html="detailcontent"></div>
+	</div>
+
+    <div class="pnMBox">
+    	<div class="pnBox" ng-show="pnBox">
+	        <p ng-click="article(predata.id)" tdata="{{predata.title?1:0}}"><strong>上一篇：</strong>{{predata.title?predata.title:'没有了'}}</p>
+	        <p ng-click="article(nextdata.id)" tdata="{{nextdata.title?1:0}}"><strong>下一篇：</strong>{{nextdata.title?nextdata.title:'没有了'}}</p>
+	    </div>
+    </div>
+</div>

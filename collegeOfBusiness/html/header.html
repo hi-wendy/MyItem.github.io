@@ -1,1 +1,28 @@
-<div class="headerBox"><div class="clearfix mainwidth"><div class="logoBox1 fl"><img src="images/whutlogo.png"></div><div class="logohr fl"></div><div class="logoBox2 fl"><img src="images/en.png"></div><div class="searchBox fr clearfix"><input class="fl" type="text" ng-model="searchText" placeholder="请输入关键词"><button ng-click="searchBtn($event)" class="fl iconfont icon-fangdajing"></button></div><nav class="fl"><ul><li ng-class="{'active':nav==0}"><a href="#/home"><span>首页</span></a></li><li ng-class="{'active':nav==1}"><a href="#/main/schoolProfile"><span>学院概况</span></a></li><li ng-class="{'active':nav==2}"><a href="#/main/organizationP"><span>党群工作</span></a></li><li ng-class="{'active':nav==3}"><a href="#/main/notice"><span>行政工作</span></a></li><li ng-class="{'active':nav==4}"><a href="#/main/enDynamic"><span>创新创业</span></a></li><li ng-class="{'active':nav==5}"><a href="#/main/teachingNotice"><span>教学工作</span></a></li><li ng-class="{'active':nav==6}"><a href="#/main/studentMAG"><span>学生工作</span></a></li><li ng-class="{'active':nav==7}"><a href="#/main/enFNList"><span>创友之窗</span></a></li><li ng-class="{'active':nav==8}"><a href="#/main/cooperation"><span>对外交流</span></a></li><li ng-class="{'active':nav==9}"><a href="#/main/infoPublic"><span>信息公开</span></a></li></ul></nav></div><div class="msg animated flipInX" ng-show="msg.length>0"><p>{{msg}}</p></div></div>
+<div class="headerBox">
+    <div class="clearfix mainwidth">
+    	<div class="logoBox1 fl" ng-click="goHome()"><img src="images/whutlogo.png"></div>
+    	<div class="logohr fl"></div>
+    	<div class="logoBox2 fl" ng-click="goHome()"><img src="images/en.png"></div>
+    	<div class="searchBox fr clearfix">
+    		<input class="fl" type="text" ng-keyup="keydown($event)" ng-model="searchText" placeholder="请输入关键词"><button ng-click="searchBtn($event,true)" class="fl iconfont icon-fangdajing"></button>
+            
+            <div class="msg animated flipInX" ng-show="msg.length>0">
+                <p>{{msg}}</p>
+            </div>
+    	</div>
+    	<nav class="fl">
+    		<ul>
+    			<li ng-class="{'active':nav==0}" ><a href="#/home"><span>首页</span></a></li>
+    			<li ng-class="{'active':nav==1}" ><a href="#/main/schoolProfile"><span>学院概况</span></a></li>
+    			<li ng-class="{'active':nav==2}" ><a href="#/main/organizationP"><span>党群工作</span></a></li>
+    			<li ng-class="{'active':nav==3}" ><a href="#/main/notice"><span>行政工作</span></a></li>
+    			<li ng-class="{'active':nav==4}" ><a href="#/main/enDynamic"><span>创新创业</span></a></li>
+    			<li ng-class="{'active':nav==5}" ><a href="#/main/teachingNotice"><span>教学工作</span></a></li>
+    			<li ng-class="{'active':nav==6}" ><a href="#/main/studentMAG"><span>学生工作</span></a></li>
+    			<li ng-class="{'active':nav==7}" ><a href="#/main/enFNList"><span>创友之窗</span></a></li>
+    			<li ng-class="{'active':nav==8}" ><a href="#/main/cooperation"><span>对外交流</span></a></li>
+    			<li ng-class="{'active':nav==9}" ><a href="#/main/infoPublic"><span>信息公开</span></a></li>
+    		</ul>
+    	</nav>
+    </div>
+</div>
